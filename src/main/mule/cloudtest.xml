@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="1eece894-ec40-4636-aa1c-331661bf26ad" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="cloudtestFlow" doc:id="5cf39980-d678-402b-9ac0-3f5926a8fc08" >
+		<http:listener doc:name="Listener" doc:id="225e21ff-7c10-4d36-a10f-3673f8f9a566" config-ref="HTTP_Listener_config" path="/cloudtest"/>
+		<set-payload value="cloud test successful" doc:name="Set Payload" doc:id="fb18a931-b4b9-46f0-8051-9868bbcbd9b5" />
+	</flow>
+</mule>
